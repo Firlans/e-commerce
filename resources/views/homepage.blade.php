@@ -8,12 +8,9 @@
 
 </head>
 <body>
-    <header>
-        <x-navbar></x-navbar>
-    </header>
-    <h1> firlan book store </h1>
-    <main>
-
+    <x-navbar></x-navbar>
+    <main class="">
+        <h1> firlan book store </h1>
     </main>
     <section class="product">
 
@@ -21,8 +18,6 @@
     <section class="contact">
 
     </section> <!-- contact-->
-    <footer>
-
-    </footer>
+    <x-footer></x-footer>
 </body>
 </html>
