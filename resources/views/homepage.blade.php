@@ -9,6 +9,7 @@
 </head>
 <body>
     <x-navbar></x-navbar>
+    <x-slide-show></x-slide-show>
     <main class="">
         <h1> firlan book store </h1>
     </main>

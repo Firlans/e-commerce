@@ -1,5 +1,5 @@
-<header class="sticky top-0">
-    <nav class="w-full bg-gradient-to-r from-amber-50 to-amber-100 shadow-md font-main">
+<header class="sticky top-0 w-full bg-gradient-to-r from-amber-50 to-amber-100 shadow-md font-main">
+    <nav>
         <!-- Main navbar container -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
