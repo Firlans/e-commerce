@@ -12,6 +12,14 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get("/products", function(){
+    return view("products");
+});
+
+Route::get("/products/{book}", function(){
+    return "this is book pagw";
+});
+
+Route::get("/about", function(){
+    return view("about");
 });

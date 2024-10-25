@@ -1,4 +1,4 @@
-<header class="sticky top-0 w-full bg-gradient-to-r from-amber-50 to-amber-100 shadow-md font-main">
+<header class="sticky top-0 z-50 w-full bg-gradient-to-r from-amber-50 to-amber-100 shadow-md font-main">
     <nav>
         <!-- Main navbar container -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,11 +27,11 @@
                     <a href="/" class="text-amber-700 hover:text-amber-900 font-medium transition-colors">
                         Home
                     </a>
-                    <a href="/product" class="text-amber-700 hover:text-amber-900 font-medium transition-colors">
-                        Product
+                    <a href="/products" class="text-amber-700 hover:text-amber-900 font-medium transition-colors">
+                        Products
                     </a>
-                    <a href="/contact" class="text-amber-700 hover:text-amber-900 font-medium transition-colors">
-                        Contact
+                    <a href="/about" class="text-amber-700 hover:text-amber-900 font-medium transition-colors">
+                        About
                     </a>
                     <button class="bg-amber-700 text-white px-4 py-2 rounded-full hover:bg-amber-800 transition-colors">
                         <i class="fa-solid fa-moon"></i>

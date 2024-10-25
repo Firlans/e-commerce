@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to my store</title>
     @vite('resources/css/app.css')
-
 </head>
 
 <body>
     <x-navbar></x-navbar>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+    <main class="
+        max-w-7xl mx-auto px-4 mt-6
+        sm:px-6 
+        lg:px-8 
+    ">
         <!-- Banner Container -->
         <div class="relative overflow-hidden bg-gradient-to-r from-amber-50 to-amber-100 rounded-2xl shadow-lg">
             <!-- Image and Content Grid -->
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="
+                grid gap-8 items-center
+                md:grid-cols-2 
+            ">
                 <!-- Content Section -->
-                <div class="p-8 md:p-12 lg:p-16 space-y-6">
+                <div class="
+                    p-8 space-y-6
+                    md:p-12 
+                    lg:p-16 
+                ">
                     <div class="space-y-4">
                         <!-- Sale Badge -->
                         <span class="inline-block px-4 py-1 bg-amber-600 text-white rounded-full text-sm font-medium">
@@ -25,17 +35,27 @@
                         </span>
 
                         <!-- Promotion Title -->
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-amber-800">
+                        <h2 class="
+                            text-3xl font-serif font-bold text-amber-800
+                            md:text-4xl 
+                            lg:text-5xl
+                        ">
                             {{ $promotion["promotion"] }}
                         </h2>
 
                         <!-- Tagline -->
-                        <h3 class="text-xl md:text-2xl text-amber-700 font-medium">
+                        <h3 class="
+                            text-xl  text-amber-700 font-medium
+                            md:text-2xl
+                        ">
                             {{ $promotion["tagLine"] }}
                         </h3>
 
                         <!-- Description -->
-                        <p class="text-amber-700 text-base md:text-lg">
+                        <p class="
+                            text-amber-700 text-base 
+                            md:text-lg
+                        ">
                             {{ $promotion["decription"] }}
                         </p>
                     </div>
@@ -53,7 +73,10 @@
                 </div>
 
                 <!-- Image Section -->
-                <div class="relative h-64 md:h-full">
+                <div class="
+                    relative h-64 
+                    md:h-full
+                ">
                     <img src="{{ asset($image[0]) }}" alt="Book promotion"
                         class="absolute inset-0 w-full h-full object-cover object-center">
                     <!-- Decorative Elements -->
@@ -65,10 +88,17 @@
             </div>
         </div>
     </main>
-    <section class="product max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section class="
+        product max-w-7xl mx-auto px-4 py-12
+        sm:px-6 
+        lg:px-8 
+    ">
         <!-- Section Header -->
         <div class="text-center mb-12 space-y-4">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber-800">
+            <h2 class="
+                text-3xl font-serif font-bold text-amber-800
+                md:text-4xl 
+            ">
                 Buku Terlaris
             </h2>
             <p class="text-amber-700 max-w-2xl mx-auto">
@@ -77,15 +107,19 @@
         </div>
 
         <!-- Product Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="
+            grid grid-cols-2 text-xs gap-6
+            sm:grid-cols-3
+            lg:grid-cols-4
+        ">
             @foreach ($books as $book)
                 <div class="group">
                     <!-- Product Card -->
                     <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-shadow hover:shadow-xl">
                         <!-- Product Image Container -->
                         <div class="relative aspect-[3/4] overflow-hidden bg-amber-50">
-                            @if(isset($book["image"]))
-                                <img src="{{ asset($book['image']) }}" alt="{{ $book['title'] }}"
+                            @if(isset($book["image-cover-url"]))
+                                <img src="{{ asset($book['image-cover-url']) }}" alt="{{ $book['title'] }}"
                                     class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300">
                             @else
                                 <!-- Placeholder for missing image -->
@@ -99,13 +133,13 @@
                             @endif
 
                             <!-- Quick View Button -->
-                            <div
+                            <a href="/product/{{ $book["title"]}}"
                                 class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                                 <button
                                     class="bg-white text-amber-800 px-4 py-2 rounded-full font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                     Lihat Detail
                                 </button>
-                            </div>
+                            </a>
                         </div>
 
                         <!-- Product Info -->
@@ -169,9 +203,6 @@
             </a>
         </div>
     </section>
-    <section class="contact">
-
-    </section> <!-- contact-->
     <x-footer></x-footer>
 </body>
 

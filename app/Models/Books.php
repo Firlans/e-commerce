@@ -13,7 +13,7 @@ class Books
                 "description" => "Panduan praktis untuk mengubah kebiasaan kecil menjadi pencapaian besar.",
                 "price" => 100_000,
                 "categories" => ["non-fiksi"],
-                "image-cover-url" => "images/books/atomic-habbits.jpeg"
+                "image-cover-url" => "images/books/atomic-habbits.jpg"
             ],
             [
                 "id" => 2,
@@ -21,7 +21,7 @@ class Books
                 "description" => "Buku tentang literasi finansial dan pola pikir kaya.",
                 "price" => 120_000,
                 "categories" => ["non-fiksi", "motivasi"],
-                "image-cover-url" => "images/books/rich-dad-poor-dad.jpeg"
+                "image-cover-url" => "images/books/rich-dad-poor-dad.jpg"
             ],
             [
                 "id" => 3,
@@ -29,7 +29,7 @@ class Books
                 "description" => "Berfokus pada cara menemukan prioritas dan ketenangan hidup.",
                 "price" => 110_000,
                 "categories" => ["non-fiksi", "self-help"],
-                "image-cover-url" => "images/books/subtle-art.jpeg"
+                "image-cover-url" => "images/books/subtle-art.jpg"
             ],
             [
                 "id" => 4,
@@ -37,7 +37,7 @@ class Books
                 "description" => "Penjelasan mendalam tentang cara berpikir manusia.",
                 "price" => 150_000,
                 "categories" => ["non-fiksi", "psikologi"],
-                "image-cover-url" => "images/books/thinking-fast-slow.jpeg"
+                "image-cover-url" => "images/books/thinking-fast-slow.jpg"
             ],
             [
                 "id" => 5,
@@ -45,7 +45,7 @@ class Books
                 "description" => "Sejarah peradaban manusia dari perspektif evolusi.",
                 "price" => 180_000,
                 "categories" => ["non-fiksi", "sejarah"],
-                "image-cover-url" => "images/books/sapiens.jpeg"
+                "image-cover-url" => "images/books/sapiens.jpg"
             ],
             [
                 "id" => 6,
@@ -53,7 +53,7 @@ class Books
                 "description" => "Tentang pentingnya hidup di masa kini untuk mencapai kedamaian.",
                 "price" => 130_000,
                 "categories" => ["non-fiksi", "spiritualitas"],
-                "image-cover-url" => "images/books/power-of-now.jpeg"
+                "image-cover-url" => "images/books/power-of-now.jpg"
             ],
             [
                 "id" => 7,
@@ -61,7 +61,7 @@ class Books
                 "description" => "Bagaimana menemukan alasan mendalam di balik kesuksesan.",
                 "price" => 140_000,
                 "categories" => ["non-fiksi", "bisnis"],
-                "image-cover-url" => "images/books/start-with-why.jpeg"
+                "image-cover-url" => "images/books/start-with-why.jpg"
             ],
             [
                 "id" => 8,
@@ -69,7 +69,7 @@ class Books
                 "description" => "Kisah Viktor Frankl tentang makna hidup dalam kondisi ekstrem.",
                 "price" => 125_000,
                 "categories" => ["non-fiksi", "psikologi"],
-                "image-cover-url" => "images/books/mans-search-for-meaning.jpeg"
+                "image-cover-url" => "images/books/mans-search-for-meaning.jpg"
             ],
             [
                 "id" => 9,
@@ -77,7 +77,7 @@ class Books
                 "description" => "Pentingnya ketekunan dalam mencapai tujuan.",
                 "price" => 115_000,
                 "categories" => ["non-fiksi", "motivasi"],
-                "image-cover-url" => "images/books/grit.jpeg"
+                "image-cover-url" => "images/books/grit.jpg"
             ],
             [
                 "id" => 10,
@@ -85,7 +85,7 @@ class Books
                 "description" => "Cara menemukan tujuan hidup untuk mencapai kebahagiaan.",
                 "price" => 135_000,
                 "categories" => ["non-fiksi", "self-help"],
-                "image-cover-url" => "images/books/ikigai.jpeg"
+                "image-cover-url" => "images/books/ikigai.jpg"
             ]
         ];
     }
