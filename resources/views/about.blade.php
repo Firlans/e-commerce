@@ -10,6 +10,9 @@
 
 <body>
     <x-navbar></x-navbar>
+    <main>
+        `
+    </main>
     <x-footer></x-footer>
 </body>
 

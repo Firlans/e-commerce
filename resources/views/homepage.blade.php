@@ -74,7 +74,7 @@
 
                 <!-- Image Section -->
                 <div class="
-                    relative h-64 
+                    relative h-64
                     md:h-full
                 ">
                     <img src="{{ asset($image[0]) }}" alt="Book promotion"
@@ -120,7 +120,7 @@
                         <div class="relative aspect-[3/4] overflow-hidden bg-amber-50">
                             @if(isset($book["image-cover-url"]))
                                 <img src="{{ asset($book['image-cover-url']) }}" alt="{{ $book['title'] }}"
-                                    class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300">
+                                    class="w-10/12 h-full mx-auto object-cover object-center transform group-hover:scale-105 transition-transform duration-300">
                             @else
                                 <!-- Placeholder for missing image -->
                                 <div class="w-full h-full flex items-center justify-center bg-amber-100">

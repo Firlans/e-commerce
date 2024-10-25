@@ -13,11 +13,11 @@ Route::get('/', function () {
 });
 
 Route::get("/products", function(){
-    return view("products");
+    return view("products",  ["books" => Books::all()]);
 });
 
-Route::get("/products/{book}", function(){
-    return "this is book pagw";
+Route::get("/product/{book}", function(){
+    return view("product");
 });
 
 Route::get("/about", function(){
