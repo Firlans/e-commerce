@@ -126,7 +126,7 @@
 
                                 <!-- Quick View -->
                                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                    <a href="/product/{{ $book['title'] }}"
+                                    <a href="/product/{{ $book['id'] }}"
                                         class="bg-white text-amber-800 px-6 py-3 rounded-full font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 hover:bg-amber-50">
                                         View Details
                                     </a>
@@ -136,7 +136,7 @@
                             <!-- Product Info -->
                             <div class="p-4 space-y-3">
                                 <!-- Title -->
-                                <a href="/product/{{ $book['title'] }}" class="block">
+                                <a href="/product/{{ $book['id'] }}" class="block">
                                     <h3 class="font-medium text-lg text-amber-900 line-clamp-2 hover:text-amber-700 transition-colors">
                                         {{ $book["title"] }}
                                     </h3>

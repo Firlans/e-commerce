@@ -133,7 +133,7 @@
                             @endif
 
                             <!-- Quick View Button -->
-                            <a href="/product/{{ $book["title"]}}"
+                            <a href="/product/{{ $book["id"]}}"
                                 class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                                 <button
                                     class="bg-white text-amber-800 px-4 py-2 rounded-full font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">

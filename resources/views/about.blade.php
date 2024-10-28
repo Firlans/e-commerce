@@ -11,7 +11,10 @@
 <body>
     <x-navbar></x-navbar>
     <main>
-        `
+        <p class="owner">firlan syah</p>
+        <p class="staff-marketing">yudistira</p>
+        <p class="sosmed-spesialis">devinta</p>
+        <p class="kepala-gudang">yudistira</p>
     </main>
     <x-footer></x-footer>
 </body>

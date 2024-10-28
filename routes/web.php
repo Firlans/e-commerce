@@ -16,8 +16,8 @@ Route::get("/products", function(){
     return view("products",  ["books" => Books::all()]);
 });
 
-Route::get("/product/{book}", function(){
-    return view("product");
+Route::get("/product/{book_id}", function($book_id){
+    return view("product",  ["book" => Books::book($book_id)]);
 });
 
 Route::get("/about", function(){
