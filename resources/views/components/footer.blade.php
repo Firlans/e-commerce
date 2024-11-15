@@ -101,27 +101,21 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-amber-700 hover:text-amber-900 transition-colors">
+                            <a href="https://www.instagram.com/firlan_sy" target="_blank" class="text-amber-700 hover:text-amber-900 transition-colors">
                                 <i class="fa-brands fa-instagram text-xl"></i>
                                 <span class="sr-only">Instagram</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-amber-700 hover:text-amber-900 transition-colors">
+                            <a href="https://wa.me/089673945784" target="_blank" class="text-amber-700 hover:text-amber-900 transition-colors">
                                 <i class="fa-brands fa-whatsapp text-xl"></i>
                                 <span class="sr-only">WhatsApp</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-amber-700 hover:text-amber-900 transition-colors">
+                            <a href="https://id.shp.ee/cPduyi7" target="_blank" class="text-amber-700 hover:text-amber-900 transition-colors">
                                 <i class="fa-solid fa-shop text-xl"></i>
                                 <span class="sr-only">Shopee</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-amber-700 hover:text-amber-900 transition-colors">
-                                <i class="fa-solid fa-store text-xl"></i>
-                                <span class="sr-only">Tokopedia</span>
                             </a>
                         </li>
                     </ul>
