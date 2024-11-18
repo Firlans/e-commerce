@@ -118,8 +118,8 @@
                     <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-shadow hover:shadow-xl">
                         <!-- Product Image Container -->
                         <div class="relative aspect-[3/4] overflow-hidden bg-amber-50">
-                            @if(isset($book["image-cover-url"]))
-                                <img src="{{ asset($book['image-cover-url']) }}" alt="{{ $book['title'] }}"
+                            @if(isset($book["image_cover_url"]))
+                                <img src="{{ asset($book['image_cover_url']) }}" alt="{{ $book['title'] }}"
                                     class="w-10/12 h-full mx-auto object-cover object-center transform group-hover:scale-105 transition-transform duration-300">
                             @else
                                 <!-- Placeholder for missing image -->

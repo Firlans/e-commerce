@@ -4,21 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Books;
-class BookController
- extends Controller
+
+class BookController extends Controller
 {
     public function store(Request $request)
     {
-        $book = Books::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'price' => $request->price,
-            'image_cover_url' => $request->image_cover_url
+        // Validasi input
+        // Validasi input
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'image_cover_url' => 'required|url',
         ]);
 
-        // Menambahkan kategori jika diperlukan
-        $book->categories()->attach($request->category_id);
+        // Simpan buku
+        $book = Books::create([
+            'title' => $validatedData['title'],
+            'description' => $validatedData['description'],
+            'price' => $validatedData['price'],
+            'image_cover_url' => $validatedData['image_cover_url'],
+        ]);
 
-        return response()->json(['message' => 'Book added successfully!'], 200);
+        return response()->json([
+            'message' => 'Book added successfully!',
+            'book' => $book
+        ], 201);
     }
 }
+
