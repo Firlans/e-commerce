@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <h1
                         class="text-2xl md:text-3xl font-serif font-bold text-amber-800 hover:text-amber-700 transition-colors">
-                        Firlan Books Store
+                        Firlan Books Store <!-- TODO : GANTI DENGAN NAMA TOKO APAPUN JANGAN NAMA FIRLAN -->
                     </h1>
                 </div>
 

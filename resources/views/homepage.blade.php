@@ -155,7 +155,7 @@
                                 @foreach ($book["categories"] as $category)
                                     <span
                                         class="inline-block px-2 py-1 text-xs font-medium bg-amber-100 text-amber-800 rounded-full">
-                                        {{ $category }}
+                                        {{ $category['title'] }}
                                     </span>
                                 @endforeach
                             </div>

@@ -4,12 +4,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             <!-- Company Info -->
             <div class="space-y-4">
-                <h2 class="text-2xl font-serif font-bold text-amber-800">Firlan Books Store</h2>
+                <h2 class="text-2xl font-serif font-bold text-amber-800">Firlan Books Store</h2> <!-- TODO : GANTI DENGAN NAMA TOKO APAPUN JANGAN NAMA FIRLAN -->
                 <p class="text-amber-700">Toko buku terpercaya dengan koleksi lengkap dan pelayanan prima untuk para
                     pecinta buku di Indonesia.</p>
                 <div class="space-y-2">
                     <p class="flex items-center text-amber-700">
                         <i class="fa-solid fa-location-dot w-5"></i>
+                        <!-- TODO : GANTI DENGAN ALAMAT UNPAM -->
                         <span class="ml-2">Jl. Contoh No. 123, Jakarta</span>
                     </p>
                     <p class="flex items-center text-amber-700">
@@ -18,7 +19,7 @@
                     </p>
                     <p class="flex items-center text-amber-700">
                         <i class="fa-solid fa-envelope w-5"></i>
-                        <span class="ml-2">info@firlanbooks.com</span>
+                        <span class="ml-2">info@firlanbooks.com</span> <!-- TODO : GANTI DENGAN NAMA TOKO APAPUN JANGAN NAMA FIRLAN -->
                     </p>
                 </div>
             </div>
@@ -151,7 +152,7 @@
         <!-- Copyright -->
         <div class="border-t border-amber-200 pt-4 mt-4">
             <div class="flex flex-col md:flex-row justify-between items-center text-amber-700 text-sm">
-                <p>&copy; 2024 Firlan Books Store. All rights reserved.</p>
+                <p>&copy; 2024 Firlan Books Store. All rights reserved.</p> <!-- TODO : GANTI DENGAN NAMA TOKO APAPUN JANGAN NAMA FIRLAN -->
                 <div class="flex space-x-4 mt-2 md:mt-0">
                     <a href="/privacy" class="hover:text-amber-900 transition-colors">Privacy Policy</a>
                     <span>|</span>
