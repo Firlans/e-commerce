@@ -7,7 +7,7 @@
 ### - php artisan key:generate
 
 ## migrasi database
-### - touch database.sqlite
+### - touch ./database/database.sqlite
 ### - php artisan migrate
 
 ## buka 2 terminal untuk jalankan 2 perintah ini
