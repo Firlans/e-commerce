@@ -16,7 +16,19 @@ class CategorySeeder extends Seeder
         // TODO : buatkan minimal 10 kategori
         $categories = [
             ['title' => 'Self-Help'],
-            ['title' => 'Motivation']
+            ['title' => 'Motivation'],
+            ['title' => 'Fantasy'],
+            ['title' => 'Romance'],
+            ['title' => 'Science Fiction'],
+            ['title' => 'Mystery'],
+            ['title' => 'Non-Fiction'],
+            ['title' => 'Crime'],
+            ['title' => 'Adventure'],
+            ['title' => 'Historical Fiction'],
+            ['title' => 'Horror'],
+            ['title' => 'Thriller'],
+            ['title' => 'Fiction'],
+            
         ];
         foreach ($categories as $category) {
             Category::create($category);
