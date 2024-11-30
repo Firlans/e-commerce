@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Tentang Firlan Books Store - Toko buku terpercaya dengan koleksi lengkap untuk pecinta buku di Indonesia">
-    <title>About - Firlan Books Store</title>
+    <title>About - BiblioHaven</title>
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -20,7 +20,7 @@
             <div class="flex flex-col md:flex-row items-center justify-between p-8 md:p-12">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-amber-800 mb-6">
-                        Selamat Datang di Firlan Books Store
+                        Selamat Datang di BiblioHaven
                     </h1>
                     <p class="text-amber-700 text-lg leading-relaxed">
                         Kami adalah destinasi terpercaya bagi para pencinta buku di Indonesia. Dengan koleksi yang
