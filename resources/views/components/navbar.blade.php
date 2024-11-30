@@ -35,7 +35,8 @@
                     </a>
                     <button class="bg-amber-700 text-white px-4 py-2 rounded-full hover:bg-amber-800 transition-colors">
                         <!-- <i class="fa-solid fa-moon"></i> -->
-                        <i class="fa-solid fa-sun"></i>
+                        <!-- <i class="fa-solid fa-sun"></i> -->
+                        <i class="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
 
