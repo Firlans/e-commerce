@@ -90,13 +90,13 @@
                 <div class="flex items-center space-x-4">
                     <!-- Quantity Selector -->
                     <div class="flex items-center">
-                        <button
+                        <button id="decreaseQuantity"
                             class="p-2 rounded-l-lg bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">
                             <i class="fa-solid fa-minus"></i>
                         </button>
-                        <input type="number" value="1" min="1"
+                        <input type="number" id="quantityInput" value="1" min="1" max="99"
                             class="w-16 py-2 text-center border-y-2 border-amber-100 focus:outline-none text-amber-800">
-                        <button
+                        <button id="increaseQuantity"
                             class="p-2 rounded-r-lg bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">
                             <i class="fa-solid fa-plus"></i>
                         </button>
@@ -106,7 +106,7 @@
                     <button
                         class="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors">
                         <i class="fa-solid fa-cart-plus"></i>
-                        <span>add to cart</span>
+                        <span>Checkout</span>
                     </button>
 
                     <!-- Wishlist Button -->
@@ -133,29 +133,29 @@
                         <div class="space-y-2">
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Publisher</span>
-                                <span><?=$book->publisher ?></span>
+                                <span>{{$book->publisher}}</span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Language</span>
-                                <span><?=$book->language ?></span>
+                                <span>{{$book->language}}</span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Pages</span>
-                                <span><?=$book->pages ?></span>
+                                <span>{{$book->pages}}</span>
                             </p>
                         </div>
                         <div class="space-y-2">
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">ISBN</span>
-                                <span><?=$book->isbn ?></span>
+                                <span>{{$book->isbn}}</span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Weight</span>
-                                <span><?=$book->weight ?>g</span>
+                                <span>{{$book->weight}}g</span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Dimensions</span>
-                                <span><?=$book->dimension ?></span>
+                                <span>{{$book->dimension}}</span>
                             </p>
                         </div>
                     </div>
@@ -218,6 +218,7 @@
     </main>
 
     <x-footer></x-footer>
+    <script src="{{ asset('js/quantity.js') }}"></script>
 </body>
 
 </html>
