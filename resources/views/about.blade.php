@@ -147,7 +147,7 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Team Section -->
         <section class="mb-16">
             <div class="text-center mb-10">
@@ -159,14 +159,25 @@
                 <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="relative mb-6">
                         <img src="/images/staff/firlan-syah.jpeg" alt="Firlan Syah"
-                            class="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                        class="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
                         <div
-                            class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-100 px-4 py-1 rounded-full">
-                            <span class="text-amber-800 font-medium">Pemilik</span>
-                        </div>
+                        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-100 px-4 py-1 rounded-full">
+                        <span class="text-amber-800 font-medium">Pemilik</span>
                     </div>
-                    <h3 class="text-xl font-bold text-amber-800 text-center">Firlan Syah</h3>
                 </div>
+                <h3 class="text-xl font-bold text-amber-800 text-center">Firlan Syah</h3>
+            </div>
+            <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+                <div class="relative mb-6">
+                    <img src="/images/staff/rasyid.jpeg" alt="Yudistira"
+                        class="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div
+                        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-100 px-4 py-1 rounded-full">
+                        <span class="text-amber-800 font-medium">manager</span>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800 text-center">rasyid</h3>
+            </div>
                 <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="relative mb-6">
                         <img src="/images/staff/yudistira.jpeg" alt="Yudistira"
