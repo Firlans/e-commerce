@@ -152,8 +152,7 @@
         <section class="mb-16">
             <div class="text-center mb-10">
                 <h2 class="text-2xl md:text-3xl font-serif font-bold text-amber-800 mb-4">Tim Kami</h2>
-                <p class="text-amber-700 max-w-2xl mx-auto">Berkenalan dengan orang-orang hebat di balik Firlan Books
-                    Store</p>
+                <p class="text-amber-700 max-w-2xl mx-auto">Berkenalan dengan orang-orang hebat di balik BiblioHaven</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- TODO : MASUKKAN GAMBAR ANGGOTA YANG LAIN -->
@@ -181,7 +180,7 @@
                 </div>
                 <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="relative mb-6">
-                        <img src="/images/social-media.jpg" alt="Devinta"
+                        <img src="/images/devinta.jpeg" alt="Devinta"
                             class="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
                         <div
                             class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-100 px-4 py-1 rounded-full">
