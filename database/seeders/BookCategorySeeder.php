@@ -13,6 +13,7 @@ class BookCategorySeeder extends Seeder
      */
     public function run(): void
     {
+        // TODO : hubungin buku dengan category buku berdasarkan kedua id table
         $bookCategoryMappings = [
             // book_id => category_id(s)
             1 => [1], // "Atomic Habits" => "Self-Help" (contoh jika hanya mempunyai 1 kategori)
