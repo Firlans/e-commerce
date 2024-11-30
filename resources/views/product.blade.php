@@ -106,7 +106,7 @@
                     <button
                         class="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors">
                         <i class="fa-solid fa-cart-plus"></i>
-                        <span>Add to Cart</span>
+                        <span>checkout</span>
                     </button>
 
                     <!-- Wishlist Button -->
