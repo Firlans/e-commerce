@@ -1,5 +1,11 @@
 # documentasi instalasi project
 
+## prerequisite
+### - php 8xx
+### - nodejs 20
+### - npm 10
+### - laravel 11
+
 ## first step
 ### - composer install
 ### - npm install
