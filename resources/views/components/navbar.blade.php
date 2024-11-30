@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <h1
                         class="text-2xl md:text-3xl font-serif font-bold text-amber-800 hover:text-amber-700 transition-colors">
-                        Firlan Books Store <!-- TODO : GANTI DENGAN NAMA TOKO APAPUN JANGAN NAMA FIRLAN -->
+                        BiblioHaven <!-- TODO : GANTI DENGAN NAMA TOKO APAPUN JANGAN NAMA FIRLAN -->
                     </h1>
                 </div>
 
@@ -35,7 +35,8 @@
                     </a>
                     <button class="bg-amber-700 text-white px-4 py-2 rounded-full hover:bg-amber-800 transition-colors">
                         <!-- <i class="fa-solid fa-moon"></i> -->
-                        <i class="fa-solid fa-sun"></i>
+                        <!-- <i class="fa-solid fa-sun"></i> -->
+                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
 
