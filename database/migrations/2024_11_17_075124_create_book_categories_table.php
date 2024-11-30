@@ -15,6 +15,7 @@ return new class extends Migration
             $table->foreignId("book_id")->constrained("books")->onDelete("cascade");
             $table->foreignId("category_id")->constrained("categories")->onDelete("cascade");
             $table->primary(['book_id', "category_id"]);
+            $table->timestamps();
         });
     }
 

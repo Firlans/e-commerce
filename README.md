@@ -1,9 +1,21 @@
-# composer install
-# npm install
-# touch database.sqlite
-# cp .env.example .env
-# php artisan key:generate
+# documentasi instalasi project
 
+## prerequisite
+### - php 8xx
+### - nodejs 20
+### - npm 10
+### - laravel 11
 
-# php artisan serve
-# npm run dev
+## first step
+### - composer install
+### - npm install
+### - cp .env.example .env
+### - php artisan key:generate
+
+## migrasi database
+### - touch ./database/database.sqlite
+### - php artisan migrate:fresh --seed
+
+## buka 2 terminal untuk jalankan 2 perintah ini
+### - php artisan serve
+### - npm run dev

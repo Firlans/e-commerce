@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Book extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'price', 'image-cover-url'];
+    protected $fillable = ['title', 'publisher', 'language', 'isbn', 'dimension', 'weight', 'description', 'price', 'image_cover_url'];
 
     public function categories()
     {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $book["title"] }} - Firlan Books Store</title>
+    <title>{{ $book->title }} - Firlan Books Store</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -19,7 +19,7 @@
                 <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
                 <li><a href="/products" class="hover:text-amber-900">Products</a></li>
                 <li><i class="fa-solid fa-chevron-right text-xs"></i></li>
-                <li class="text-amber-900 font-medium">{{ $book["title"] }}</li>
+                <li class="text-amber-900 font-medium">{{ $book->title }}</li>
             </ol>
         </nav>
 
@@ -29,8 +29,8 @@
             <div class="space-y-6">
                 <!-- Main Image -->
                 <div class="aspect-[3/4] bg-white rounded-2xl shadow-sm overflow-hidden">
-                    @if(isset($book["image-cover-url"]))
-                        <img src="{{ asset($book['image-cover-url']) }}" alt="{{ $book['title'] }}"
+                    @if(isset($book->image_cover_url))
+                        <img src="{{ asset($book->image_cover_url) }}" alt="{{ $book->title }}"
                             class="w-full h-full object-contain p-8">
                     @else
                         <div class="w-full h-full flex items-center justify-center bg-amber-100">
@@ -48,8 +48,8 @@
                     @for($i = 0; $i < 4; $i++)
                         <button
                             class="aspect-square bg-white rounded-lg shadow-sm overflow-hidden border-2 border-transparent hover:border-amber-400 transition-colors">
-                            @if(isset($book["image-cover-url"]))
-                                <img src="{{ asset($book['image-cover-url']) }}" alt="Product view {{ $i + 1 }}"
+                            @if(isset($book->image_cover_url))
+                                <img src="{{ asset($book->image_cover_url) }}" alt="Product view {{ $i + 1 }}"
                                     class="w-full h-full object-cover">
                             @else
                                 <div class="w-full h-full flex items-center justify-center bg-amber-100">
@@ -69,11 +69,11 @@
             <div class="space-y-8">
                 <!-- Title and Categories -->
                 <div class="space-y-4">
-                    <h1 class="text-3xl font-serif font-bold text-amber-800">{{ $book["title"] }}</h1>
+                    <h1 class="text-3xl font-serif font-bold text-amber-800">{{ $book->title }}</h1>
                     <div class="flex flex-wrap gap-2">
-                        @foreach ($book["categories"] as $category)
+                        @foreach ($book->categories as $category)
                             <span class="px-3 py-1 text-sm font-medium bg-amber-100 text-amber-800 rounded-full">
-                                {{ $category }}
+                                {{ $category->title }}
                             </span>
                         @endforeach
                     </div>
@@ -81,13 +81,8 @@
 
                 <!-- Price Section -->
                 <div class="space-y-2">
-                    @if(isset($book["original_price"]) && $book["original_price"] > $book["price"])
-                        <p class="text-lg text-gray-500 line-through">
-                            Rp {{ number_format($book["original_price"], 0, ',', '.') }}
-                        </p>
-                    @endif
                     <p class="text-3xl font-bold text-amber-800">
-                        Rp {{ number_format($book["price"], 0, ',', '.') }}
+                        Rp {{ number_format($book->price, 0, ',', '.') }}
                     </p>
                 </div>
 
@@ -111,7 +106,7 @@
                     <button
                         class="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors">
                         <i class="fa-solid fa-cart-plus"></i>
-                        <span>Add to Cart</span>
+                        <span>add to cart</span>
                     </button>
 
                     <!-- Wishlist Button -->
@@ -128,7 +123,7 @@
                 <!-- Description -->
                 <div class="prose prose-amber max-w-none">
                     <h2 class="text-xl font-semibold text-amber-800 mb-4">Description</h2>
-                    <p class="text-amber-700">{{ $book["description"] }}</p>
+                    <p class="text-amber-700">{{ $book->description }}</p>
                 </div>
 
                 <!-- Product Details -->
@@ -138,29 +133,29 @@
                         <div class="space-y-2">
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Publisher</span>
-                                <span>Publisher Name</span>
+                                <span><?=$book->publisher ?></span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Language</span>
-                                <span>Indonesian</span>
+                                <span><?=$book->language ?></span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Pages</span>
-                                <span>256</span>
+                                <span><?=$book->pages ?></span>
                             </p>
                         </div>
                         <div class="space-y-2">
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">ISBN</span>
-                                <span>978-3-16-148410-0</span>
+                                <span><?=$book->isbn ?></span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Weight</span>
-                                <span>300g</span>
+                                <span><?=$book->weight ?>g</span>
                             </p>
                             <p class="flex justify-between text-amber-700">
                                 <span class="font-medium">Dimensions</span>
-                                <span>15 x 21 cm</span>
+                                <span><?=$book->dimension ?></span>
                             </p>
                         </div>
                     </div>
@@ -187,7 +182,7 @@
             </div>
         </div>
 
-        <!-- Related Products -->
+        <!-- Related Products
         <section class="mt-16">
             <h2 class="text-2xl font-serif font-bold text-amber-800 mb-8">You May Also Like</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -219,7 +214,7 @@
                     </div>
                 @endfor
             </div>
-        </section>
+        </section> -->
     </main>
 
     <x-footer></x-footer>

@@ -29,6 +29,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 md:pl-8">
+                    <!-- TODO : CARIKAN GAMBAR TOKO BUKU -->
                     <img src="/images/about-hero.jpg" alt="Suasana Toko Firlan Books"
                         class="w-full rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
                 </div>
@@ -155,6 +156,7 @@
                     Store</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- TODO : MASUKKAN GAMBAR ANGGOTA YANG LAIN -->
                 <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="relative mb-6">
                         <img src="/images/staff/firlan-syah.jpeg" alt="Firlan Syah"
