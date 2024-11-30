@@ -30,7 +30,7 @@
                 </div>
                 <div class="md:w-1/2 md:pl-8">
                     <!-- TODO : CARIKAN GAMBAR TOKO BUKU -->
-                    <img src="/images/about-hero.jpg" alt="Suasana Toko Firlan Books"
+                    <img src="/images/suasana.jpeg" alt="Suasana Toko Firlan Books"
                         class="w-full rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
                 </div>
             </div>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="relative mb-6">
-                        <img src="/images/devinta.jpeg" alt="Devinta"
+                        <img src="/images/staff/devinta.jpeg" alt="Devinta"
                             class="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
                         <div
                             class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-100 px-4 py-1 rounded-full">
@@ -191,14 +191,14 @@
                 </div>
                 <div class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                     <div class="relative mb-6">
-                        <img src="/images/warehouse.jpg" alt="Yudistira"
+                        <img src="/images/staff/haker.jpeg" alt="Yudistira"
                             class="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
                         <div
                             class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-100 px-4 py-1 rounded-full">
                             <span class="text-amber-800 font-medium">Warehouse</span>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-amber-800 text-center">Yudistira</h3>
+                    <h3 class="text-xl font-bold text-amber-800 text-center">nauval</h3>
                 </div>
             </div>
         </section>
