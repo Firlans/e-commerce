@@ -86,39 +86,31 @@
                     </p>
                 </div>
 
-                <!-- Quick Actions -->
-                <div class="flex items-center space-x-4">
+                <form action="{{ route('cart.add') }}" method="POST" class="flex items-center space-x-4">
+                    @csrf
+                    <input type="hidden" name="book_id" value="{{ $book->id }}">
+
                     <!-- Quantity Selector -->
                     <div class="flex items-center">
-                        <button id="decreaseQuantity"
+                        <button type="button" id="decreaseQuantity"
                             class="p-2 rounded-l-lg bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">
                             <i class="fa-solid fa-minus"></i>
                         </button>
-                        <input type="number" id="quantityInput" value="1" min="1" max="99"
+                        <input type="number" id="quantityInput" name="quantity" value="1" min="1" max="99"
                             class="w-16 py-2 text-center border-y-2 border-amber-100 focus:outline-none text-amber-800">
-                        <button id="increaseQuantity"
+                        <button type="button" id="increaseQuantity"
                             class="p-2 rounded-r-lg bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
 
                     <!-- Add to Cart Button -->
-                    <button
+                    <button type="submit"
                         class="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-amber-700 text-white rounded-full hover:bg-amber-800 transition-colors">
                         <i class="fa-solid fa-cart-plus"></i>
-                        <span>Checkout</span>
+                        <span>add to cart</span>
                     </button>
-
-                    <!-- Wishlist Button -->
-                    <button class="p-3 rounded-full bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">
-                        <i class="fa-regular fa-heart"></i>
-                    </button>
-
-                    <!-- Share Button -->
-                    <button class="p-3 rounded-full bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">
-                        <i class="fa-solid fa-share-nodes"></i>
-                    </button>
-                </div>
+                </form>
 
                 <!-- Description -->
                 <div class="prose prose-amber max-w-none">
