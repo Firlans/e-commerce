@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $book->title }} - Firlan Books Store</title>
+    <title>{{ $book->title }} - BiblioHaven</title>
     @vite('resources/css/app.css')
 </head>
 
