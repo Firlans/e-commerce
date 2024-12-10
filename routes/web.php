@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -43,13 +44,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [OrderController::class, 'index'])->name('orders.index');
     Route::post('/cart/add', [OrderController::class, 'addToCart'])->name('cart.add');
     Route::delete('/cart/{order}', [OrderController::class, 'removeFromCart'])->name('cart.remove');
+    Route::post('/checkout/process', [CheckoutController::class, 'process'])
+        ->name('checkout.process');
+    Route::post('/checkout/callback', [CheckoutController::class, 'callback'])
+        ->name('checkout.callback');
 });
 
 Route::get("/about", function () {
     return view("about");
 });
 
-Route::get('/orders', function(){
+Route::get('/orders', function () {
     return view('orders', [
         'orders' => collect([])
     ]);

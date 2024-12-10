@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders - BiblioHaven</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Midtrans -->
+    @if(request()->routeIs('checkout.*'))
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key="{{ config('midtrans.client_key') }}"></script>
+    @endif
 </head>
 
 <body class="bg-amber-50/30">
@@ -26,72 +31,49 @@
             <div class="p-6">
                 <h1 class="text-2xl font-serif font-bold text-amber-800 mb-6">Pending Orders</h1>
                 @if($orders->isEmpty())
-                    <div class="text-center py-12">
-                        <div class="mb-4">
-                            <i class="fa-solid fa-shopping-cart text-5xl text-amber-300"></i>
-                        </div>
-                        <p class="text-amber-700">No pending orders found</p>
-                        <a href="/products"
-                            class="mt-4 inline-block bg-amber-700 text-white px-6 py-2 rounded-full hover:bg-amber-800 transition-colors">
-                            Continue Shopping
-                        </a>
-                    </div>
+                    <x-empty-state icon="shopping-cart" message="No pending orders found"
+                        :action-link="route('products.index')" action-text="Continue Shopping" />
                 @else
-                    <div class="space-y-6">
+                    <!-- Main orders container -->
+                    <div class="space-y-6" id="ordersContainer">
                         @foreach($orders as $order)
                             <div class="border rounded-lg p-4 hover:border-amber-300 transition-colors">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center space-x-4">
-                                        <div class="w-20 h-24 bg-amber-100 rounded-lg overflow-hidden">
-                                            @if($order->book->image_cover_url)
-                                                <img src="{{ asset($order->book->image_cover_url) }}"
-                                                    alt="{{ $order->book->title }}" class="w-full h-full object-cover">
-                                            @else
-                                                <div class="w-full h-full flex items-center justify-center">
-                                                    <i class="fa-solid fa-book text-2xl text-amber-300"></i>
-                                                </div>
-                                            @endif
+                                        <!-- Checkout checkbox -->
+                                        <div class="flex items-center">
+                                            <input type="checkbox"
+                                                class="checkout-item form-checkbox h-5 w-5 text-amber-600 rounded border-amber-300 focus:ring-amber-500"
+                                                data-order-id="{{ $order->id }}" data-price="{{ $order->total_price }}"
+                                                onchange="updateTotal()">
                                         </div>
+
+                                        <div class="w-20 h-24 bg-amber-100 rounded-lg overflow-hidden">
+                                            <x-book-cover :book="$order->book" />
+                                        </div>
+
                                         <div>
                                             <h3 class="font-medium text-amber-900">{{ $order->book->title }}</h3>
                                             <p class="text-sm text-amber-700">Quantity: {{ $order->quantity }}</p>
-                                            <p class="text-sm text-amber-700">Total: Rp
+                                            <p class="text-sm text-amber-700">Price: Rp
                                                 {{ number_format($order->total_price, 0, ',', '.') }}
                                             </p>
                                         </div>
                                     </div>
+
                                     <div class="flex items-center space-x-4">
-                                        <span class="px-3 py-1 text-sm font-medium bg-amber-100 text-amber-800 rounded-full">
-                                            {{ ucfirst($order->status) }}
-                                        </span>
-                                        <!-- Alpine.js Dropdown -->
-                                        <div x-data="{ isOpen: false }" class="relative">
-                                            <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
+                                        <x-order-status :status="$order->status" />
+                                        <div class="relative" x-data="{ open: false }">
+                                            <button @click="open = !open" @click.away="open = false" type="button"
                                                 class="text-amber-700 hover:text-amber-900">
                                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                                             </button>
 
-                                            <!-- Dropdown Menu -->
-                                            <div x-show="isOpen" @click.away="isOpen = false"
-                                                x-transition:enter="transition ease-out duration-200"
-                                                x-transition:enter-start="opacity-0 transform scale-95"
-                                                x-transition:enter-end="opacity-100 transform scale-100"
-                                                x-transition:leave="transition ease-in duration-75"
-                                                x-transition:leave-start="opacity-100 transform scale-100"
-                                                x-transition:leave-end="opacity-0 transform scale-95"
-                                                class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-10"
-                                                style="display: none;">
-                                                <form action="{{ route('cart.remove', $order->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit"
-                                                        class="w-full text-left px-4 py-2 text-sm text-amber-700 hover:bg-amber-50">
-                                                        <i class="fa-solid fa-trash-can mr-2"></i>Remove from Cart
-                                                    </button>
-                                                </form>
-                                                <button
+                                            <div x-show="open"
+                                                class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1 z-10">
+                                                <button type="button" onclick="deleteOrder({{ $order->id }})"
                                                     class="w-full text-left px-4 py-2 text-sm text-amber-700 hover:bg-amber-50">
-                                                    <i class="fa-solid fa-heart mr-2"></i>Save for Later
+                                                    <i class="fa-solid fa-trash-can mr-2"></i>Remove from Cart
                                                 </button>
                                             </div>
                                         </div>
@@ -100,22 +82,79 @@
                             </div>
                         @endforeach
                     </div>
-                    <!-- Checkout Button -->
-                    <div class="mt-6 text-right">
-                        <form method="POST">
-                            @csrf
-                            <button type="submit"
-                                class="inline-block bg-amber-700 text-white px-6 py-2 rounded-full hover:bg-amber-800 transition-colors">
+
+                    <!-- Total and Checkout Section -->
+                    <div class="mt-6 border-t pt-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-lg font-medium text-amber-800">Total Selected:</span>
+                            <span class="text-xl font-bold text-amber-900" id="totalAmount">Rp 0</span>
+                        </div>
+
+                        <div class="flex justify-end">
+                            <button type="button" onclick="processCheckout()" id="checkoutButton" disabled
+                                class="bg-amber-700 text-white px-6 py-2 rounded-full hover:bg-amber-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                                 Proceed to Checkout
                             </button>
-                        </form>
+                        </div>
                     </div>
                 @endif
             </div>
         </div>
+
+        <!-- Hidden forms for actions -->
+        <form id="deleteForm" method="POST" style="display: none;">
+            @csrf
+            @method('DELETE')
+        </form>
+
+        <form id="checkoutForm" action="{{ route('checkout.process') }}" method="POST" style="display: none;">
+            @csrf
+            <input type="hidden" name="selected_orders" id="selectedOrders">
+        </form>
+
     </main>
 
     <x-footer></x-footer>
+    <script>
+        function updateTotal() {
+            const checkboxes = document.querySelectorAll('.checkout-item');
+            let total = 0;
+            let hasChecked = false;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    hasChecked = true;
+                    total += parseFloat(checkbox.dataset.price);
+                }
+            });
+
+            document.getElementById('totalAmount').textContent =
+                `Rp ${total.toLocaleString('id-ID')}`;
+
+            document.getElementById('checkoutButton').disabled = !hasChecked;
+        }
+
+        function deleteOrder(orderId) {
+            if (confirm('Are you sure you want to remove this item?')) {
+                const form = document.getElementById('deleteForm');
+                form.action = `/cart/${orderId}`;
+                form.submit();
+            }
+        }
+
+        function processCheckout() {
+            const checkboxes = document.querySelectorAll('.checkout-item:checked');
+            const selectedOrders = Array.from(checkboxes).map(cb => cb.dataset.orderId);
+
+            if (selectedOrders.length === 0) {
+                alert('Please select at least one item to checkout');
+                return;
+            }
+
+            document.getElementById('selectedOrders').value = JSON.stringify(selectedOrders);
+            document.getElementById('checkoutForm').submit();
+        }
+    </script>
 </body>
 
 </html>
