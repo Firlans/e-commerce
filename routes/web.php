@@ -8,6 +8,16 @@ use App\Models\Benners;
 use App\Models\Book;
 use App\Http\Controllers\ProductsPageController;
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cart', [OrderController::class, 'index'])->name('orders.index');
+    Route::post('/cart/add', [OrderController::class, 'addToCart'])->name('cart.add');
+    Route::delete('/cart/{order}', [OrderController::class, 'removeFromCart'])->name('cart.remove');
+    Route::post('/checkout/process', [CheckoutController::class, 'process'])
+        ->name('checkout.process');
+    Route::post('/checkout/callback', [CheckoutController::class, 'callback'])
+        ->name('checkout.callback');
+});
+
 Route::get('/', function () {
     return view('homepage', [
         "promotion" => Benners::all(),
@@ -38,16 +48,6 @@ Route::get('/products', [ProductsPageController::class, 'index'])->name('product
 
 Route::get("/product/{book_id}", function ($book_id) {
     return view("product", ["book" => Book::find($book_id)]);
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/cart', [OrderController::class, 'index'])->name('orders.index');
-    Route::post('/cart/add', [OrderController::class, 'addToCart'])->name('cart.add');
-    Route::delete('/cart/{order}', [OrderController::class, 'removeFromCart'])->name('cart.remove');
-    Route::post('/checkout/process', [CheckoutController::class, 'process'])
-        ->name('checkout.process');
-    Route::post('/checkout/callback', [CheckoutController::class, 'callback'])
-        ->name('checkout.callback');
 });
 
 Route::get("/about", function () {
